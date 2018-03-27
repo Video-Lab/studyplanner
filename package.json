@@ -15,7 +15,7 @@
     "socket.io": "~0.9.14"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "devDependencies": {},
   "license": "ISC"
