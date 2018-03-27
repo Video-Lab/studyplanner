@@ -35,6 +35,7 @@ function move(arr, prevIndex, newIndex) {
    return arr;
 }
 
+var User = require("./models/user")
 
 // ===== DATABASE ======
 
@@ -82,42 +83,6 @@ function Subject(subjectName) {
     return obj;
 
 }
-
-
-
-
-var taskSchema = new mongoose.Schema({
-    text: String,
-    favorite: Boolean
-});
-
-var subjectSchema = new mongoose.Schema({
-    name: String,
-    urlName: String,
-    tasks: [taskSchema],
-    selected: Boolean,
-    favorite: Boolean
-});
-
-var userSchema = new mongoose.Schema({
-    username: String,
-    password: String,
-    fullName: String,
-    email: String,
-    // subjects: [{
-    //     name: String,
-    //     urlName: String,
-    //     tasks: Array,
-    //     selected: Boolean
-    // }],
-    subjects: [subjectSchema],
-    currentSubject: Object,
-    tasksToLoad: Array
-});
-
-
-
-var User = mongoose.model("User", userSchema);
 
 var invalidLogin = false;
 var loggedInUser;
