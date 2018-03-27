@@ -12,7 +12,7 @@ const express = require("express"),
       app = express(),
       mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/ezstudy");
+mongoose.connect(process.env.DB);
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
