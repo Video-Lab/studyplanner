@@ -1,0 +1,19 @@
+<% include partials/header %>
+<% include partials/navbar %>
+
+<div class="pushDown">
+<h1 class="titleText">LOGIN</h1>
+    <form action="/loginUser" method="POST" class="regForm">
+        <div class="form-group"> 
+        <input type="text" name="username" placeholder="Username" class="form-control" required></input>
+        <p></p>
+        <input type="password" name="password" placeholder="Password" class="form-control" required></input>
+        <p></p>
+        <% if(invalidLogin === true){ %>
+            <p class="invalid">Invalid. Please try again.</p>
+        <% } %>
+        <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<% include partials/footer %>

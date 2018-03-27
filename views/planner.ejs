@@ -1,0 +1,76 @@
+<% include partials/header %>
+<% include partials/planbar %>
+
+
+
+<div class="wrapper">
+    <div class="sidebar">
+
+            <% loggedInUser.subjects.forEach(function(subject){ %>
+            <div class="gridSubject">
+
+                <button
+                class="subject <% if(loggedInUser.currentSubject.name === subject.name) { %> selected <% } %>"
+                id="<%=subject.name%>"
+                onclick="window.location.href = '/planner/<%=subject.name%>'"
+                >
+                <%=subject.name%>
+                </button>
+                
+                 <% if(subject.name !== "All") { %>
+                <div class="delete">
+                   <span class="delIconWrapper"><i class="fa fa-trash fa-2x delIcon" onclick="window.location.href = 'delete/<%=subject.urlName%>'"></i></span> 
+                </div>
+                <% } %>
+
+            </div>
+
+            <% }) %>
+
+
+            <div class="createForm">
+                <form action="/addNewSubject" method="POST" class="createForm" autocomplete="off">
+                    <input type="text" name="newSubject" placeholder="New Subject Name" class="addNewSubject form-control hide" id="newSub"></input>
+                </form>
+                <div class="create" id="create">Edit...</div>
+            </div>
+    </div>
+
+    <div class="main">
+       
+       <% loggedInUser.subjects.forEach(function(subject){ %>
+          <% if(subject.name === loggedInUser.currentSubject.name) { %>
+              <% subject.tasks.forEach(function(task){ %>
+                   <div class="task <%=subject.tasks.indexOf(task) %>" <% if(task.favorite === true) { %> style="background: #faff75;" <% } %> >
+                       <div class="taskText <%=subject.tasks.indexOf(task) %>"><%=task.text%></div>
+                       <% if(subject.name !== "All") { %>
+                      <span class="taskDelIcon">
+                        <i class="fa fa-trash iconStyling" onclick="window.location.href = '/deleteTask/<%=subject.tasks.indexOf(task)%>'"></i>
+                        <i class="fa fa-thumb-tack iconStyling" onclick="window.location.href = '/favoriteTask/<%=subject.tasks.indexOf(task)%>'"></i>
+                        <% if(task.favorite !== true) { %> <i class="fa fa-font iconStyling <%=subject.tasks.indexOf(task)%> pinned"></i> <% } %>
+                      </span>
+                      <% } %>
+                   </div>
+                   <% if(subject.name !== "All") { %>
+                   <div class="">
+                          <form action="/editTask/<%=subject.tasks.indexOf(task)%>" method="POST" class="editTask hide" autocomplete="off">
+                              <input type="text" name="task[text]" placeholder="New task text here..." class=" editTaskInput form-control"></input>
+                          </form>
+                      </div>
+                      <% } %>
+              <% }) %>
+          <% } %>
+      <% }) %>
+
+        <% if(loggedInUser.currentSubject.name !== "All") { %>
+        <form action="/taskCreate" method="POST" autocomplete="off" id="taskAdd">
+            <input type="text" name="task[taskText]" placeholder="Add a new task..." class="addTask form-control"></input>
+        </form>
+        <% } %>
+
+
+    </div>
+</div>
+
+
+<% include partials/footer %>

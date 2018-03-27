@@ -1,0 +1,58 @@
+.navbar {
+ background: #2d2f3d !important;
+ padding-bottom: 10px !important;
+ 
+}
+
+.navbar .navbar-nav li a {
+  color: #ddd !important;
+  transition: all 0.3s;
+}
+
+.navbar .navbar-nav li a:hover {
+  color: white !important;  
+}
+
+.callToAction {
+   height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  color: #262626;
+  animation-name: cta;
+  animation-duration: 1.7s;
+}
+
+@keyframes cta {
+  0% {
+    opacity: 0;
+    height: 0%;
+  }
+  
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+button.btn .btn-primary .btn-lg .btn-block {
+  display: block;
+}
+
+
+h1 {
+    font-size: 100px;
+}
+body, html {
+	height: 100%;
+}
+
+body {
+	   background-image: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/HPOKFbR/woman-writing-notes-in-notebook-close-up-steady-footage-with-out-of-focus-hand-1920x1080-full-hd-footage_qktebg9u__F0000.png");
+	height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

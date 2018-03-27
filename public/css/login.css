@@ -1,0 +1,5 @@
+ body {
+        background: linear-gradient(to right, #11998e, #38ef7d);
+        animation-name: bgchange;
+        animation-duration: 1s;
+    }

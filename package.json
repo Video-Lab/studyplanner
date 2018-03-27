@@ -1,0 +1,22 @@
+{
+  "name": "study-planner",
+  "version": "1.0.0",
+  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "main": "server.js",
+  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^3.2.6",
+    "jquery": "^3.3.1",
+    "mongoose": "^5.0.4",
+    "popper.js": "^1.12.9",
+    "socket.io": "~0.9.14"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}

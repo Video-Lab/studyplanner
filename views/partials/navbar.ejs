@@ -1,0 +1,32 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-custom" id="navbar-homepage">
+  <a class="navbar-brand" href="/">ezStudy</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <ul class="navbar-nav ml-md-auto" id="link-text">
+      <% if(loggedInUser !== undefined && loggedInUser !== null) { %>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Welcome back, <%=loggedInUser.username%></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/planner">Planner</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Log Out</a>
+      </li>
+      <% } %>
+      
+      <% if(loggedInUser === undefined || loggedInUser === null) { %>
+       <li class="nav-item">
+        <a class="nav-link" href="/login">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register">Sign Up</a>
+      </li>
+      <% } %>
+     </ul>
+  </div>
+</nav>

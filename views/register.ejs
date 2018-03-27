@@ -1,0 +1,20 @@
+<% include partials/header %>
+<% include partials/navbar %>
+
+<div class="regForme">
+<h1 class="titleText">REGISTER</h1>
+    <form action="/registerUser" method="post" class="regForm">
+        <div class="form-group">
+        <input type="text" name="regName" placeholder="Full Name" class="form-control" required></input>
+        <p></p>
+        <input type="email" name="regEmail" placeholder="Email" class="form-control" required></input>
+        <p></p>
+        <input type="text" name="regUsername" placeholder="Username" class="form-control" required></input>
+        <p></p>
+        <input type="password" name="regPassword" placeholder="Password" class="form-control" required></input>
+        <p></p>
+        <button class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<% include partials/footer %>
