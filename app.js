@@ -35,7 +35,7 @@ function move(arr, prevIndex, newIndex) {
    return arr;
 }
 
-var User = require("./models/user")
+var User = require("/models/user")
 
 // ===== DATABASE ======
 
